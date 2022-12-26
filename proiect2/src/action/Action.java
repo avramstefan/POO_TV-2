@@ -2,6 +2,7 @@ package action;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
+import movie.Movie;
 import user.Credentials;
 
 public final class Action {
@@ -9,12 +10,14 @@ public final class Action {
     private String page;
     private String feature;
     private String movie;
+    private String subscribedGenre;
     private Credentials credentials;
     private String startsWith;
     private int count;
     private Filter filters;
     private int rate;
     private Input inputData;
+    private Movie addedMovie;
 
     public Action() {
 
@@ -51,6 +54,22 @@ public final class Action {
             case "like", "rate" -> ActionExec.likeOrRate(this);
             default -> null;
         };
+    }
+
+    public Movie getAddedMovie() {
+        return addedMovie;
+    }
+
+    public void setAddedMovie(Movie addedMovie) {
+        this.addedMovie = addedMovie;
+    }
+
+    public String getSubscribedGenre() {
+        return subscribedGenre;
+    }
+
+    public void setSubscribedGenre(String subscribedGenre) {
+        this.subscribedGenre = subscribedGenre;
     }
 
     public Input getInputData() {

@@ -114,7 +114,7 @@ public class PageHandler implements Command {
             return;
         }
 
-        Action previousAction = changePageHistory.getLast();
+        Action previousAction = changePageHistory.removeLast();
 
         if (previousAction.getPage().equals(LOGIN)
             || previousAction.getPage().equals(REGISTER)) {
