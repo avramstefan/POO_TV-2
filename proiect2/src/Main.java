@@ -30,7 +30,7 @@ public final class Main {
 
         Platform platform = Platform.getInstance(inputData);
         platform.runActions(output);
-        
+
         Platform.setPlatform(null);
 
         String[] firstSplitArray = inputPath.split("_");

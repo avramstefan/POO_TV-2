@@ -1,18 +1,64 @@
 package action;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import movie.Movie;
+import platform.Platform;
 import user.Credentials;
 import user.User;
 
 import java.util.ArrayList;
 
+import static platform.Constants.*;
+
 public final class Utils {
+
+    private static Platform platform;
 
     private Utils() {
 
+    }
+
+    public static void setPlatform() {
+        Utils.platform = Platform.getInstance();
+    }
+
+    /**
+     * Setting the ObjectNode output, treating the case when
+     * an error occurred or not.
+     * @param isNotError true if there is not an error case
+     * @return ObjectNode output
+     */
+    public static ObjectNode actionResult(final boolean isNotError) {
+        ObjectNode node = (new ObjectMapper()).createObjectNode();
+
+        if (!isNotError) {
+            node.put("error", "Error");
+
+            if (platform.getCurrentPage().equals(LOGIN)
+                    || platform.getCurrentPage().equals(REGISTER)) {
+                platform.setCurrentPage(HOMEPAGE_UNAUTHENTICATED);
+            }
+        } else {
+            node.put("error", (JsonNode) null);
+        }
+
+        ArrayNode moviesObj = node.putArray("currentMoviesList");
+
+        if (isNotError && (platform.getCurrentPage().equals(MOVIES)
+                || platform.getCurrentPage().equals(DETAILS))) {
+            serializeMovies(platform.getAvailableMovies(), moviesObj);
+        }
+
+        if (platform.getLoggedUser() != null && isNotError) {
+            node.set("currentUser", serializeUserCredentials(platform.getLoggedUser()));
+        } else {
+            node.set("currentUser", null);
+        }
+
+        return node;
     }
 
     /**
@@ -89,6 +135,14 @@ public final class Utils {
         ArrayNode watchedMoviesNode = objectNode.putArray("watchedMovies");
         ArrayNode likedMoviesNode = objectNode.putArray("likedMovies");
         ArrayNode ratedMoviesNode = objectNode.putArray("ratedMovies");
+        // TODO vezi ca notificarile nu sunt bune prostule
+        ArrayNode notificationsNode = objectNode.putArray("notifications");
+
+        for (Movie movie : user.getNotifications()){
+            ObjectNode movieNode = (new ObjectMapper()).createObjectNode();
+            serializeSingleMovie(movieNode, movie);
+            purchasedMoviesNode.add(movieNode);
+        }
 
         for (Movie movie : user.getPurchasedMovies()) {
             ObjectNode movieNode = (new ObjectMapper()).createObjectNode();

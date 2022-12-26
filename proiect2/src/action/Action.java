@@ -25,20 +25,30 @@ public final class Action {
      * @return ObjectNode output
      */
     public ObjectNode run() {
+        if (type.equals("back")) {
+            PageHandler pageHandler = PageHandler.getInstance(inputData);
+            pageHandler.setCurrentAction(this);
+            pageHandler.undo();
+            return pageHandler.getActionResult();
+        }
+
         if (type.equals("change page")) {
-            return Commands.changePage(inputData, this);
+            PageHandler pageHandler = PageHandler.getInstance(inputData);
+            pageHandler.setCurrentAction(this);
+            pageHandler.execute();
+            return pageHandler.getActionResult();
         }
 
         return switch (feature) {
-            case "login" -> Commands.login(inputData, this);
-            case "register" -> Commands.register(inputData, this);
-            case "search" -> Commands.search(this);
-            case "filter" -> Commands.filter(this);
-            case "buy tokens" -> Commands.buyTokens(this);
-            case "buy premium account" -> Commands.buyPremiumAccount();
-            case "purchase" -> Commands.purchase();
-            case "watch" -> Commands.watch();
-            case "like", "rate" -> Commands.likeOrRate(this);
+            case "login" -> ActionExec.login(inputData, this);
+            case "register" -> ActionExec.register(inputData, this);
+            case "search" -> ActionExec.search(this);
+            case "filter" -> ActionExec.filter(this);
+            case "buy tokens" -> ActionExec.buyTokens(this);
+            case "buy premium account" -> ActionExec.buyPremiumAccount();
+            case "purchase" -> ActionExec.purchase();
+            case "watch" -> ActionExec.watch();
+            case "like", "rate" -> ActionExec.likeOrRate(this);
             default -> null;
         };
     }

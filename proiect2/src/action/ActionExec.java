@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import static action.Utils.*;
 import static platform.Constants.*;
 
-public final class Commands {
+public final class ActionExec {
 
     private static Platform platform;
 
-    private Commands() {
+    private ActionExec() {
 
     }
 
@@ -26,108 +26,7 @@ public final class Commands {
      * Setting the unique platform instance created as a Singleton.
      */
     public static void setPlatform() {
-        Commands.platform = Platform.getInstance();
-    }
-
-    /**
-     * Setting the ObjectNode output, treating the case when
-     * an error occurred or not.
-     * @param isNotError true if there is not an error case
-     * @return ObjectNode output
-     */
-    public static ObjectNode actionResult(final boolean isNotError) {
-        ObjectNode node = (new ObjectMapper()).createObjectNode();
-
-        if (!isNotError) {
-            node.put("error", "Error");
-
-            if (platform.getCurrentPage().equals(LOGIN)
-                || platform.getCurrentPage().equals(REGISTER)) {
-                platform.setCurrentPage(HOMEPAGE_UNAUTHENTICATED);
-            }
-        } else {
-            node.put("error", (JsonNode) null);
-        }
-
-        ArrayNode moviesObj = node.putArray("currentMoviesList");
-
-        if (isNotError && (platform.getCurrentPage().equals(MOVIES)
-            || platform.getCurrentPage().equals(DETAILS))) {
-            serializeMovies(platform.getAvailableMovies(), moviesObj);
-        }
-
-        if (platform.getLoggedUser() != null && isNotError) {
-            node.set("currentUser", serializeUserCredentials(platform.getLoggedUser()));
-        } else {
-            node.set("currentUser", null);
-        }
-
-        return node;
-    }
-
-    /**
-     * The main function that represents the "change page" action.
-     * It is treating different cases and sets the movies and
-     * the current page that may be displayed on the platform.
-     * @param inputData input data containing all the information needed
-     * @param action current action
-     * @return ObjectNode output
-     */
-    public static ObjectNode changePage(final Input inputData, final Action action) {
-        // Checks if it is possible to change the page from the current page.
-        if (!platform.getPages().get(platform.getCurrentPage()).canChangePage(action.getPage())) {
-            return actionResult(ERROR);
-        }
-
-        /*
-        * If the page is going to change in "see details", then there will be
-        * just one movie displayed on the screen.
-        */
-        if (action.getMovie() != null && action.getPage().equals(DETAILS)) {
-            Movie movie = platform.getMovieByName(action.getMovie());
-
-            if (movie == null) {
-                return actionResult(ERROR);
-            }
-
-            if (movie.getCountriesBanned().contains(platform.getLoggedUser().
-                    getCredentials().getCountry())) {
-                return actionResult(ERROR);
-            }
-
-            if (!platform.getAvailableMovies().contains(movie)) {
-                return actionResult(ERROR);
-            }
-
-            platform.setAvailableMovies(action.getMovie());
-            platform.setCurrentPage(action.getPage());
-            return actionResult(SUCCESS);
-        }
-
-        platform.setAvailableMovies(inputData.getMovies());
-
-        /*
-        * Removing movies that are currently banned in the logged user's country
-        * as soon as it connects on the platform.
-        */
-        if (!action.getPage().equals(LOGIN) && !action.getPage().equals(REGISTER)
-                    && !action.getPage().equals(HOMEPAGE_UNAUTHENTICATED)) {
-            platform.removeBannedMovies();
-        }
-
-        platform.setCurrentPage(action.getPage());
-
-        // Disconnects a user and resets the parameters.
-        if (action.getPage().equals(LOGOUT)) {
-            platform.setLoggedUser(null);
-            platform.setCurrentPage(HOMEPAGE_UNAUTHENTICATED);
-            platform.setAvailableMovies(inputData.getMovies());
-        }
-
-        if (action.getPage().equals(MOVIES)) {
-            return actionResult(SUCCESS);
-        }
-        return null;
+        ActionExec.platform = Platform.getInstance();
     }
 
     /**

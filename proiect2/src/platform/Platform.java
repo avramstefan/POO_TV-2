@@ -1,7 +1,8 @@
 package platform;
 
 import action.Action;
-import action.Commands;
+import action.ActionExec;
+import action.Utils;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
@@ -65,7 +66,8 @@ public final class Platform {
      * @param output ArrayNode of ObjectNodes which will be displayed in the JSON output.
      */
     public void runActions(final ArrayNode output) {
-        Commands.setPlatform();
+        ActionExec.setPlatform();
+        Utils.setPlatform();
 
         for (Action action : inputData.getActions()) {
             action.setInputData(inputData);

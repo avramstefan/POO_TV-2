@@ -14,6 +14,7 @@ public final class User {
     private ArrayList<Movie> watchedMovies;
     private ArrayList<Movie> likedMovies;
     private ArrayList<Movie> ratedMovies;
+    private ArrayList<Movie> notifications;
 
     public User() {
 
@@ -34,6 +35,15 @@ public final class User {
         watchedMovies = new ArrayList<>();
         likedMovies = new ArrayList<>();
         ratedMovies = new ArrayList<>();
+        notifications = new ArrayList<>();
+    }
+
+    public ArrayList<Movie> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(ArrayList<Movie> notifications) {
+        this.notifications = notifications;
     }
 
     public int getTokensCount() {
