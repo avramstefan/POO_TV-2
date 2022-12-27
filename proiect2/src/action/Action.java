@@ -3,6 +3,8 @@ package action;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import movie.Movie;
+import movie.MovieDatabase;
+import platform.Platform;
 import user.Credentials;
 
 public final class Action {
@@ -18,6 +20,7 @@ public final class Action {
     private int rate;
     private Input inputData;
     private Movie addedMovie;
+    private String deletedMovie;
 
     public Action() {
 
@@ -33,6 +36,17 @@ public final class Action {
             pageHandler.setCurrentAction(this);
             pageHandler.undo();
             return pageHandler.getActionResult();
+        }
+
+        if (type.equals("subscribe")) {
+            return ActionExec.subscribe(subscribedGenre);
+
+        }
+
+        if (type.equals("database")) {
+            if (feature.equals("add")) {
+                return MovieDatabase.getInstance().addMovie(addedMovie);
+            }
         }
 
         if (type.equals("change page")) {
@@ -70,6 +84,14 @@ public final class Action {
 
     public void setSubscribedGenre(String subscribedGenre) {
         this.subscribedGenre = subscribedGenre;
+    }
+
+    public String getDeletedMovie() {
+        return deletedMovie;
+    }
+
+    public void setDeletedMovie(String deletedMovie) {
+        this.deletedMovie = deletedMovie;
     }
 
     public Input getInputData() {

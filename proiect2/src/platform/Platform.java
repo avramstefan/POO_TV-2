@@ -2,11 +2,14 @@ package platform;
 
 import action.Action;
 import action.ActionExec;
+import action.PageHandler;
 import action.Utils;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import movie.Movie;
+import movie.MovieDatabase;
+import movie.MovieObserver;
 import pages.Page;
 import pages.loggedhomepage.HomepageAuthenticated;
 import pages.logout.Logout;
@@ -23,7 +26,7 @@ import java.util.HashMap;
 
 import static platform.Constants.*;
 
-public final class Platform {
+public final class Platform implements MovieObserver {
     private User loggedUser;
     private HashMap<String, Page> pages;
     private ArrayList<Movie> availableMovies;
@@ -36,10 +39,6 @@ public final class Platform {
         this.currentPage = HOMEPAGE_UNAUTHENTICATED;
         this.inputData = inputData;
         this.availableMovies = inputData.getMovies();
-
-        initializePages();
-        initializeUsers();
-        initializeMovies();
     }
 
     /**
@@ -50,6 +49,8 @@ public final class Platform {
     public static synchronized Platform getInstance(final Input inputData) {
         if (platform == null) {
             platform = new Platform(inputData);
+            MovieDatabase movieDatabase = MovieDatabase.getInstance(inputData);
+            PageHandler pageHandler = PageHandler.getInstance(inputData);
         }
         return platform;
     }
@@ -66,6 +67,10 @@ public final class Platform {
      * @param output ArrayNode of ObjectNodes which will be displayed in the JSON output.
      */
     public void runActions(final ArrayNode output) {
+        initializePages();
+        initializeUsers();
+        initializeMovies();
+
         ActionExec.setPlatform();
         Utils.setPlatform();
 
@@ -78,6 +83,11 @@ public final class Platform {
                 output.add(actionObj);
             }
         }
+    }
+
+    @Override
+    public void update(Movie movie) {
+        setUserAvailableMovies();
     }
 
     /**
@@ -108,7 +118,7 @@ public final class Platform {
      * Initializes movies' extra data.
      */
     private void initializeMovies() {
-        for (Movie movie : inputData.getMovies()) {
+        for (Movie movie : MovieDatabase.getInstance().getMovies()) {
             movie.initializeExtraData();
         }
     }
@@ -125,7 +135,7 @@ public final class Platform {
      * Setting the user's available movies.
      */
     public void setUserAvailableMovies() {
-        setAvailableMovies(inputData.getMovies());
+        setAvailableMovies(MovieDatabase.getInstance().getMovies());
         removeBannedMovies();
     }
 

@@ -15,11 +15,11 @@ import static platform.Constants.SUCCESS;
 
 public class PageHandler implements Command {
     private static PageHandler pageHandler = null;
-    private Platform platform;
-    private Input inputData;
+    private final Platform platform;
+    private final Input inputData;
     private Action action;
     private ObjectNode actionNodeResult;
-    private LinkedList<Action> changePageHistory;
+    private final LinkedList<Action> changePageHistory;
 
     public PageHandler(Input inputData) {
         this.platform = Platform.getInstance();
@@ -124,6 +124,10 @@ public class PageHandler implements Command {
 
         this.setCurrentAction(previousAction);
         execute();
+    }
+
+    public static void setPageHandler(PageHandler pageHandler) {
+        PageHandler.pageHandler = pageHandler;
     }
 
     public Action getCurrentAction() {

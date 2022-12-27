@@ -1,0 +1,186 @@
+[ {
+  "error" : null,
+  "currentMoviesList" : [ ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Ramsi",
+      "password" : "numiplacevelea",
+      "accountType" : "standard",
+      "country" : "Romania",
+      "balance" : "300"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : null,
+  "currentMoviesList" : [ ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "Russia",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "Russia",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Matrix 2",
+    "year" : "1998",
+    "duration" : 131,
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0,
+    "genres" : [ "Action", "Comedy", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Ukraine" ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "Russia",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Matrix 2",
+    "year" : "1998",
+    "duration" : 131,
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0,
+    "genres" : [ "Action", "Comedy", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Ukraine" ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "Russia",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Matrix 2",
+    "year" : "1998",
+    "duration" : 131,
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0,
+    "genres" : [ "Action", "Comedy", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Ukraine" ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "Russia",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : [ {
+    "name" : "Matrix 2",
+    "year" : "1998",
+    "duration" : 131,
+    "numLikes" : 0,
+    "rating" : 0.0,
+    "numRatings" : 0,
+    "genres" : [ "Action", "Comedy", "Crime" ],
+    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+    "countriesBanned" : [ "Ukraine" ]
+  } ],
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Mihail",
+      "password" : "discret",
+      "accountType" : "premium",
+      "country" : "Russia",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ ]
+  }
+} ]

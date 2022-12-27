@@ -1,7 +1,9 @@
+import action.PageHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import input.Input;
+import movie.MovieDatabase;
 import platform.Platform;
 
 import java.io.File;
@@ -31,6 +33,8 @@ public final class Main {
         Platform platform = Platform.getInstance(inputData);
         platform.runActions(output);
 
+        MovieDatabase.setMovieDatabase(null);
+        PageHandler.setPageHandler(null);
         Platform.setPlatform(null);
 
         String[] firstSplitArray = inputPath.split("_");

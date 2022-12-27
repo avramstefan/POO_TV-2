@@ -9,8 +9,10 @@ import platform.Platform;
 import user.Credentials;
 import user.User;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 
+import static java.lang.String.valueOf;
 import static platform.Constants.*;
 
 public final class Utils {
@@ -88,7 +90,7 @@ public final class Utils {
      */
     public static void serializeSingleMovie(final ObjectNode movieNode, final Movie movie) {
         movieNode.put("name", movie.getName());
-        movieNode.put("year", movie.getYear());
+        movieNode.put("year", valueOf(movie.getYear()));
         movieNode.put("duration", movie.getDuration());
         movieNode.put("numLikes", movie.getNumLikes());
         movieNode.put("rating", movie.getRating());
@@ -125,7 +127,7 @@ public final class Utils {
         credentialsNode.put("password", credentials.getPassword());
         credentialsNode.put("accountType", credentials.getAccountType());
         credentialsNode.put("country", credentials.getCountry());
-        credentialsNode.put("balance", String.valueOf(credentials.getBalance()));
+        credentialsNode.put("balance", valueOf(credentials.getBalance()));
         objectNode.set("credentials", credentialsNode);
 
         objectNode.put("tokensCount", user.getTokensCount());
@@ -135,13 +137,13 @@ public final class Utils {
         ArrayNode watchedMoviesNode = objectNode.putArray("watchedMovies");
         ArrayNode likedMoviesNode = objectNode.putArray("likedMovies");
         ArrayNode ratedMoviesNode = objectNode.putArray("ratedMovies");
-        // TODO vezi ca notificarile nu sunt bune prostule
         ArrayNode notificationsNode = objectNode.putArray("notifications");
 
-        for (Movie movie : user.getNotifications()){
-            ObjectNode movieNode = (new ObjectMapper()).createObjectNode();
-            serializeSingleMovie(movieNode, movie);
-            purchasedMoviesNode.add(movieNode);
+        for (User.Notification notification : user.getNotifications()){
+            ObjectNode node = (new ObjectMapper()).createObjectNode();
+            node.put("movieName", notification.getMovieName());
+            node.put("message", notification.getMessage());
+            notificationsNode.add(node);
         }
 
         for (Movie movie : user.getPurchasedMovies()) {

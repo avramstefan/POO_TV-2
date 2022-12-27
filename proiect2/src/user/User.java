@@ -1,12 +1,18 @@
 package user;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import movie.Movie;
+import movie.MovieDatabase;
+import movie.MovieObserver;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 
+import static action.Utils.actionResult;
+import static platform.Constants.ERROR;
 import static platform.Constants.START_NUM_FREE_PREMIUM_MOVIES;
 
-public final class User {
+public final class User implements MovieObserver {
     private Credentials credentials;
     private int tokensCount;
     private int numFreePremiumMovies;
@@ -14,7 +20,34 @@ public final class User {
     private ArrayList<Movie> watchedMovies;
     private ArrayList<Movie> likedMovies;
     private ArrayList<Movie> ratedMovies;
-    private ArrayList<Movie> notifications;
+    private ArrayList<Notification> notifications;
+    private ArrayList<String> subscribedGenres;
+
+    public static class Notification {
+        private String movieName;
+        private String message;
+
+        Notification(String movieName, String message) {
+            this.movieName = movieName;
+            this.message = message;
+        }
+
+        public String getMovieName() {
+            return movieName;
+        }
+
+        public void setMovieName(String movieName) {
+            this.movieName = movieName;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+    }
 
     public User() {
 
@@ -23,6 +56,35 @@ public final class User {
     public User(final Credentials credentials) {
         this.credentials = credentials;
         initializeExtraData();
+    }
+
+    @Override
+    public void update(Movie movie) {
+        boolean shouldBeNotified = false;
+
+        for (String genre: movie.getGenres()) {
+            for (String subscribedGenre: subscribedGenres) {
+                if (genre.equals(subscribedGenre)) {
+                    shouldBeNotified = true;
+                    break;
+                }
+            }
+        }
+
+        if (!shouldBeNotified) {
+            return;
+        }
+
+        String movieName = movie.getName();
+        String type;
+
+        if (MovieDatabase.getInstance().getMovies().contains(movie)) {
+            type = "ADD";
+        } else {
+            type = "DELETE";
+        }
+
+        notifications.add(new Notification(movieName, type));
     }
 
     /**
@@ -36,14 +98,23 @@ public final class User {
         likedMovies = new ArrayList<>();
         ratedMovies = new ArrayList<>();
         notifications = new ArrayList<>();
+        subscribedGenres = new ArrayList<>();
     }
 
-    public ArrayList<Movie> getNotifications() {
+    public ArrayList<Notification> getNotifications() {
         return notifications;
     }
 
-    public void setNotifications(ArrayList<Movie> notifications) {
+    public void setNotifications(ArrayList<Notification> notifications) {
         this.notifications = notifications;
+    }
+
+    public ArrayList<String> getSubscribedGenres() {
+        return subscribedGenres;
+    }
+
+    public void setSubscribedGenres(ArrayList<String> subscribedGenres) {
+        this.subscribedGenres = subscribedGenres;
     }
 
     public int getTokensCount() {
