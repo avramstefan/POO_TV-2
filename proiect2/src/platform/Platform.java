@@ -80,6 +80,8 @@ public final class Platform implements MovieObserver {
             ObjectNode actionObj = action.run();
 
             if (actionObj != null) {
+                actionObj.put("type", action.getType());
+                actionObj.put("feature", action.getFeature());
                 output.add(actionObj);
             }
         }

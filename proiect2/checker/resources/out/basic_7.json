@@ -16,7 +16,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "login"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -175,7 +177,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -214,7 +218,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "search"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -243,7 +249,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -282,7 +290,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -331,7 +341,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -390,7 +402,9 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "like"
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -409,7 +423,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "login"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -488,7 +504,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -517,7 +535,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -556,7 +576,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -605,7 +627,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -664,7 +688,9 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "like"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -733,7 +759,9 @@
       "countriesBanned" : [ "Dominican Republic", "Indonesia", "Japan" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -752,11 +780,15 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "login"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "database",
+  "feature" : "add"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -935,7 +967,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -964,7 +998,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1003,7 +1039,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1052,7 +1090,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1111,7 +1151,9 @@
       "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1320,23 +1362,33 @@
       "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -1385,7 +1437,9 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "login"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1574,7 +1628,9 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1763,5 +1819,7 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "filter"
 } ]

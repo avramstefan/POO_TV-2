@@ -1,15 +1,21 @@
 [ {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "login"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -28,7 +34,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "login"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -217,7 +225,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -246,7 +256,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -285,7 +297,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -334,19 +348,27 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "subscribe",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -555,7 +577,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -604,7 +628,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -849,5 +875,7 @@
       "movieName" : "Pulp Fictiom",
       "message" : "ADD"
     } ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 } ]

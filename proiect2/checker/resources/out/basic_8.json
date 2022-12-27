@@ -16,7 +16,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "register"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -205,7 +207,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -234,7 +238,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -273,7 +279,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -322,7 +330,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -381,15 +391,21 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -458,7 +474,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -537,7 +555,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -626,7 +646,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -875,7 +897,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -964,7 +988,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1063,7 +1089,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1172,7 +1200,9 @@
       "countriesBanned" : [ "Indonesia", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1291,15 +1321,21 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1428,7 +1464,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1567,7 +1605,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1716,7 +1756,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -2025,7 +2067,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -2174,7 +2218,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -2333,7 +2379,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -2502,7 +2550,9 @@
       "countriesBanned" : [ "Azerbaijan", "China", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -2681,15 +2731,21 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -2878,7 +2934,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -3077,7 +3135,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -3286,7 +3346,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -3655,23 +3717,33 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -4040,11 +4112,15 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "buy tokens"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -4413,7 +4489,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -4782,7 +4860,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -5151,7 +5231,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -5360,7 +5442,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -5579,7 +5663,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -5808,19 +5894,27 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -6059,7 +6153,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -6308,7 +6404,9 @@
       "countriesBanned" : [ "Brazil", "Philippines", "Poland" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -6567,7 +6665,9 @@
       "countriesBanned" : [ "Brazil", "China", "Colombia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -6986,7 +7086,9 @@
       "countriesBanned" : [ "Brazil", "China", "Colombia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -7245,7 +7347,9 @@
       "countriesBanned" : [ "Brazil", "China", "Colombia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -7514,7 +7618,9 @@
       "countriesBanned" : [ "Brazil", "China", "Colombia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -7793,7 +7899,9 @@
       "countriesBanned" : [ "Brazil", "China", "Colombia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -8082,15 +8190,21 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -8389,7 +8503,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -8698,7 +8814,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -9017,7 +9135,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -9496,7 +9616,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -9815,7 +9937,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -10144,7 +10268,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -10483,7 +10609,9 @@
       "countriesBanned" : [ "China", "Norway", "United States" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -10832,15 +10960,21 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -11199,7 +11333,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -11568,7 +11704,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -11947,7 +12085,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -12486,7 +12626,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -12865,7 +13007,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -13254,7 +13398,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -13653,7 +13799,9 @@
       "countriesBanned" : [ "France", "South Africa", "Indonesia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -14062,15 +14210,21 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -14489,7 +14643,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -14918,7 +15074,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -15357,7 +15515,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -15956,7 +16116,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -16395,7 +16557,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -16844,7 +17008,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -17303,7 +17469,9 @@
       "countriesBanned" : [ "China", "Venezuela", "India" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -17772,15 +17940,21 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -18259,7 +18433,9 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -18748,7 +18924,9 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -19247,7 +19425,9 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "rate"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -19906,7 +20086,9 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -20405,7 +20587,9 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "change page",
+  "feature" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -20914,7 +21098,9 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "purchase"
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -21433,13 +21619,19 @@
       "countriesBanned" : [ "Greece", "Czech Republic", "Malaysia" ]
     } ],
     "notifications" : [ ]
-  }
+  },
+  "type" : "on page",
+  "feature" : "watch"
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "back",
+  "feature" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null
+  "currentUser" : null,
+  "type" : "on page",
+  "feature" : "filter"
 } ]

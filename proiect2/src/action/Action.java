@@ -46,6 +46,8 @@ public final class Action {
         if (type.equals("database")) {
             if (feature.equals("add")) {
                 return MovieDatabase.getInstance().addMovie(addedMovie);
+            } else {
+                return MovieDatabase.getInstance().deleteMovie(deletedMovie);
             }
         }
 

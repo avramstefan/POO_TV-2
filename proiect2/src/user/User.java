@@ -58,8 +58,7 @@ public final class User implements MovieObserver {
         initializeExtraData();
     }
 
-    @Override
-    public void update(Movie movie) {
+    private void addNotify(Movie movie) {
         boolean shouldBeNotified = false;
 
         for (String genre: movie.getGenres()) {
@@ -75,16 +74,35 @@ public final class User implements MovieObserver {
             return;
         }
 
-        String movieName = movie.getName();
-        String type;
+        notifications.add(new Notification(movie.getName(), "ADD"));
+    }
 
-        if (MovieDatabase.getInstance().getMovies().contains(movie)) {
-            type = "ADD";
-        } else {
-            type = "DELETE";
+    private void deleteNotify(Movie deletedMovie) {
+        if (!purchasedMovies.contains(deletedMovie)) {
+            return;
         }
 
-        notifications.add(new Notification(movieName, type));
+        purchasedMovies.remove(deletedMovie);
+        watchedMovies.remove(deletedMovie);
+        likedMovies.remove(deletedMovie);
+        ratedMovies.remove(deletedMovie);
+
+        if (credentials.getAccountType().equals("premium")) {
+            numFreePremiumMovies++;
+        } else {
+            tokensCount += 2;
+        }
+
+        notifications.add(new Notification(deletedMovie.getName(), "DELETE"));
+    }
+
+    @Override
+    public void update(Movie movie) {
+        if (MovieDatabase.getInstance().getMovies().contains(movie)) {
+            addNotify(movie);
+        } else {
+            deleteNotify(movie);
+        }
     }
 
     /**

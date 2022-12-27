@@ -47,9 +47,9 @@ public class MovieDatabase {
         return movieDatabase;
     }
 
-    private boolean movieExistInDatabase(Movie x) {
+    private boolean movieExistInDatabase(String movieName) {
         for (Movie movie: movies) {
-            if (movie.getName().equals(x.getName())) {
+            if (movie.getName().equals(movieName)) {
                 return true;
             }
         }
@@ -57,11 +57,31 @@ public class MovieDatabase {
     }
 
     public ObjectNode addMovie(Movie addedMovie) {
-        if (movieExistInDatabase(addedMovie))
+        if (movieExistInDatabase(addedMovie.getName())) {
             return actionResult(ERROR);
+        }
 
         movies.add(addedMovie);
         notify(addedMovie);
+        return null;
+    }
+
+    public ObjectNode deleteMovie(String movieName) {
+        if (!movieExistInDatabase(movieName)) {
+            return actionResult(ERROR);
+        }
+
+        Movie movie = null;
+
+        for (Movie databaseMovie: movies) {
+            if (databaseMovie.getName().equals(movieName)) {
+                movie = databaseMovie;
+                break;
+            }
+        }
+
+        movies.remove(movie);
+        notify(movie);
         return null;
     }
 
