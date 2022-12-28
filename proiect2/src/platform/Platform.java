@@ -89,6 +89,9 @@ public final class Platform implements MovieObserver {
 //            }
 
             if (actionObj != null) {
+//                if (action.getType().equals("back")) {
+//                    actionObj.put("currentPage", platform.getCurrentPage());
+//                }
 //                actionObj.put("type", action.getType());
 //                actionObj.put("feature", action.getFeature());
 //                actionObj.put("page", action.getPage());

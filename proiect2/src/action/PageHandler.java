@@ -92,6 +92,7 @@ public class PageHandler implements Command {
         if (!action.getPage().equals(LOGIN) && !action.getPage().equals(REGISTER)
                 && !action.getPage().equals(HOMEPAGE_UNAUTHENTICATED)) {
             platform.removeBannedMovies();
+            changePageHistory.addLast(this.action);
         }
 
         platform.setCurrentPage(action.getPage());
@@ -102,9 +103,10 @@ public class PageHandler implements Command {
             platform.setCurrentPage(HOMEPAGE_UNAUTHENTICATED);
             platform.setAvailableMovies(MovieDatabase.getInstance().getMovies());
             this.changePageHistory.clear();
+            actionNodeResult = null;
+            return;
         }
 
-        changePageHistory.addLast(this.action);
         if (action.getPage().equals(MOVIES)) {
             actionNodeResult = actionResult(SUCCESS);
             return;
@@ -114,12 +116,21 @@ public class PageHandler implements Command {
 
 
     public void undo() {
-        if (changePageHistory.size() <= 1) {
+        if (changePageHistory.size() == 0) {
             actionNodeResult = actionResult(ERROR);
             return;
         }
 
         Action garbageAction = changePageHistory.removeLast();
+
+        if (changePageHistory.size() == 0
+                || changePageHistory.getLast().getPage().
+                equals(HOMEPAGE_AUTHENTICATED)) {
+            platform.setCurrentPage(HOMEPAGE_AUTHENTICATED);
+            actionNodeResult = null;
+            return;
+        }
+
         Action previousAction = changePageHistory.removeLast();
 
         if (previousAction.getPage().equals(LOGIN)

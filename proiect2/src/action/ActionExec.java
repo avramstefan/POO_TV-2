@@ -166,7 +166,7 @@ public final class ActionExec {
 
         // Setting the balance and tokens count.
         currUser.getCredentials().setBalance(currUser.getCredentials().getBalance() - count);
-        currUser.setTokensCount(count);
+        currUser.setTokensCount(count + currUser.getTokensCount());
 
         return null;
     }
