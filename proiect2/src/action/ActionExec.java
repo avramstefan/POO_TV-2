@@ -11,6 +11,8 @@ import platform.Platform;
 import user.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static action.Utils.*;
 import static platform.Constants.*;
@@ -207,6 +209,10 @@ public final class ActionExec {
         User currUser = platform.getLoggedUser();
         Movie movie = platform.getAvailableMovies().get(CHOSEN_MOVIE);
 
+        if (currUser.getPurchasedMovies().contains(movie)) {
+            return actionResult(ERROR);
+        }
+
         /*
         * If the user has a standard account type, then it has to pay tokens for buying the movie.
         * If the user has a premium account type and there are free premium movies left to buy,
@@ -262,9 +268,12 @@ public final class ActionExec {
             return actionResult(ERROR);
         }
 
-        currUser.getWatchedMovies().add(movie);
+        if (!currUser.getWatchedMovies().contains(movie)) {
+            currUser.getWatchedMovies().add(movie);
+            return actionResult(SUCCESS);
+        }
 
-        return actionResult(SUCCESS);
+        return null;
     }
 
     /**
@@ -323,9 +332,25 @@ public final class ActionExec {
             return actionResult(ERROR);
         }
 
-        user.getRatedMovies().add(movie);
-        movie.getRatings().add(action.getRate());
-        movie.setNumRatings(movie.getNumRatings() + 1);
+        if (!user.getRatedMovies().contains(movie)) {
+            user.getRatedMovies().add(movie);
+        }
+
+        if (!movie.getRatingOwners().contains(user)) {
+            movie.setNumRatings(movie.getNumRatings() + 1);
+            movie.getRatings().add(action.getRate());
+            movie.getRatingOwners().add(user);
+        } else {
+            int idx = 0;
+            for (int i = 0; i < movie.getRatingOwners().size(); i++) {
+                if (movie.getRatingOwners().get(i) == user) {
+                    idx = i;
+                    break;
+                }
+            }
+            movie.getRatings().set(idx, action.getRate());
+        }
+
         movie.calculateRating();
 
         return actionResult(SUCCESS);
@@ -348,5 +373,24 @@ public final class ActionExec {
 
         platform.getLoggedUser().getSubscribedGenres().add(subscribedGenre);
         return null;
+    }
+
+    public static ObjectNode recommend() {
+        ObjectNode obj = (new ObjectMapper()).createObjectNode();
+
+        User user = platform.getLoggedUser();
+
+        ArrayList<String> genresTop = getUserGenresTop(user);
+        ArrayList<Movie> bestMovies = getBestMovies(user);
+
+        for (String genre: genresTop) {
+            for (Movie movie: bestMovies) {
+                if (movie.getGenres().contains(genre)) {
+                    return recommendationOutput(movie.getName());
+                }
+            }
+        }
+
+        return recommendationOutput("No recommendation");
     }
 }

@@ -16,15 +16,11 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "register"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "filter"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -43,9 +39,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -64,34 +58,34 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "subscribe",
-  "feature" : null
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
+}, {
+  "error" : "Error",
+  "currentMoviesList" : [ ],
+  "currentUser" : null
 }, {
   "error" : null,
-  "currentMoviesList" : [ {
-    "name" : "Matrix 2",
-    "year" : "1998",
-    "duration" : 131,
-    "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0,
-    "genres" : [ "Action", "Comedy", "Crime" ],
-    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-    "countriesBanned" : [ "Ukraine" ]
-  } ],
+  "currentMoviesList" : null,
   "currentUser" : {
     "credentials" : {
       "name" : "Mihail",
@@ -106,101 +100,9 @@
     "watchedMovies" : [ ],
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
-    "notifications" : [ ]
-  },
-  "type" : "back",
-  "feature" : null
-}, {
-  "error" : null,
-  "currentMoviesList" : [ {
-    "name" : "Matrix 2",
-    "year" : "1998",
-    "duration" : 131,
-    "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0,
-    "genres" : [ "Action", "Comedy", "Crime" ],
-    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-    "countriesBanned" : [ "Ukraine" ]
-  } ],
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Mihail",
-      "password" : "discret",
-      "accountType" : "premium",
-      "country" : "Russia",
-      "balance" : "1337"
-    },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "notifications" : [ ]
-  },
-  "type" : "back",
-  "feature" : null
-}, {
-  "error" : null,
-  "currentMoviesList" : [ {
-    "name" : "Matrix 2",
-    "year" : "1998",
-    "duration" : 131,
-    "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0,
-    "genres" : [ "Action", "Comedy", "Crime" ],
-    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-    "countriesBanned" : [ "Ukraine" ]
-  } ],
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Mihail",
-      "password" : "discret",
-      "accountType" : "premium",
-      "country" : "Russia",
-      "balance" : "1337"
-    },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "notifications" : [ ]
-  },
-  "type" : "back",
-  "feature" : null
-}, {
-  "error" : null,
-  "currentMoviesList" : [ {
-    "name" : "Matrix 2",
-    "year" : "1998",
-    "duration" : 131,
-    "numLikes" : 0,
-    "rating" : 0.0,
-    "numRatings" : 0,
-    "genres" : [ "Action", "Comedy", "Crime" ],
-    "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
-    "countriesBanned" : [ "Ukraine" ]
-  } ],
-  "currentUser" : {
-    "credentials" : {
-      "name" : "Mihail",
-      "password" : "discret",
-      "accountType" : "premium",
-      "country" : "Russia",
-      "balance" : "1337"
-    },
-    "tokensCount" : 0,
-    "numFreePremiumMovies" : 15,
-    "purchasedMovies" : [ ],
-    "watchedMovies" : [ ],
-    "likedMovies" : [ ],
-    "ratedMovies" : [ ],
-    "notifications" : [ ]
-  },
-  "type" : "back",
-  "feature" : null
+    "notifications" : [ {
+      "movieName" : "No recommendation",
+      "message" : "Recommendation"
+    } ]
+  }
 } ]

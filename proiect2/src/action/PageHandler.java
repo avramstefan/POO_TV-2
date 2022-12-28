@@ -3,6 +3,7 @@ package action;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import movie.Movie;
+import movie.MovieDatabase;
 import pages.Page;
 import platform.Platform;
 
@@ -20,6 +21,7 @@ public class PageHandler implements Command {
     private Action action;
     private ObjectNode actionNodeResult;
     private final LinkedList<Action> changePageHistory;
+    private boolean undoAction = false;
 
     public PageHandler(Input inputData) {
         this.platform = Platform.getInstance();
@@ -43,10 +45,13 @@ public class PageHandler implements Command {
      */
     public void execute() {
         // Checks if it is possible to change the page from the current page.
-        if (!platform.getPages().get(platform.getCurrentPage()).canChangePage(action.getPage())) {
+        if (!platform.getPages().get(platform.getCurrentPage()).canChangePage(action.getPage())
+            && !undoAction) {
             actionNodeResult = actionResult(ERROR);
             return;
         }
+
+        undoAction = false;
 
         /*
          * If the page is going to change in "see details", then there will be
@@ -78,7 +83,7 @@ public class PageHandler implements Command {
             return;
         }
 
-        platform.setAvailableMovies(inputData.getMovies());
+        platform.setAvailableMovies(MovieDatabase.getInstance().getMovies());
 
         /*
          * Removing movies that are currently banned in the logged user's country
@@ -95,7 +100,7 @@ public class PageHandler implements Command {
         if (action.getPage().equals(LOGOUT)) {
             platform.setLoggedUser(null);
             platform.setCurrentPage(HOMEPAGE_UNAUTHENTICATED);
-            platform.setAvailableMovies(inputData.getMovies());
+            platform.setAvailableMovies(MovieDatabase.getInstance().getMovies());
             this.changePageHistory.clear();
         }
 
@@ -109,11 +114,12 @@ public class PageHandler implements Command {
 
 
     public void undo() {
-        if (changePageHistory.size() == 0) {
+        if (changePageHistory.size() <= 1) {
             actionNodeResult = actionResult(ERROR);
             return;
         }
 
+        Action garbageAction = changePageHistory.removeLast();
         Action previousAction = changePageHistory.removeLast();
 
         if (previousAction.getPage().equals(LOGIN)
@@ -123,6 +129,7 @@ public class PageHandler implements Command {
         }
 
         this.setCurrentAction(previousAction);
+        undoAction = true;
         execute();
     }
 

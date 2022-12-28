@@ -1,9 +1,7 @@
 [ {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "login"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -22,21 +20,15 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "register"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "login"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -75,9 +67,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -96,9 +86,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "search"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -137,15 +125,11 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "filter"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "login"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -164,9 +148,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -205,21 +187,15 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -248,9 +224,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -289,9 +263,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "purchase"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -340,9 +312,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "watch"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -401,9 +371,7 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "like"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -485,9 +453,7 @@
       "movieName" : "Matrix 2",
       "message" : "ADD"
     } ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -549,43 +515,84 @@
       "movieName" : "Matrix 2",
       "message" : "ADD"
     } ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "subscribe",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "like"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "rate"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "watch"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "like"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "rate"
+  "currentUser" : null
+}, {
+  "error" : null,
+  "currentMoviesList" : null,
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "150"
+    },
+    "tokensCount" : 40,
+    "numFreePremiumMovies" : 14,
+    "purchasedMovies" : [ {
+      "name" : "Titanic",
+      "year" : "2019",
+      "duration" : 131,
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ]
+    } ],
+    "watchedMovies" : [ {
+      "name" : "Titanic",
+      "year" : "2019",
+      "duration" : 131,
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ]
+    } ],
+    "likedMovies" : [ {
+      "name" : "Titanic",
+      "year" : "2019",
+      "duration" : 131,
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0,
+      "genres" : [ "Action", "Thriller", "Crime" ],
+      "actors" : [ "Laurence Fishburne", "Halle Berry", "Keanu Reeves" ],
+      "countriesBanned" : [ "Russia" ]
+    } ],
+    "ratedMovies" : [ ],
+    "notifications" : [ {
+      "movieName" : "Matrix 2",
+      "message" : "ADD"
+    }, {
+      "movieName" : "John Wick: Chapter 3 - Parabellum",
+      "message" : "Recommendation"
+    } ]
+  }
 } ]

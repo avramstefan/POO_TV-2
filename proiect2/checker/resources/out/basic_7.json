@@ -16,9 +16,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -177,9 +175,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -218,9 +214,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "search"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -249,9 +243,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -290,9 +282,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "purchase"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -341,9 +331,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "watch"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -402,9 +390,7 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "like"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -423,9 +409,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -504,9 +488,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -535,9 +517,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -576,9 +556,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "purchase"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -627,9 +605,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "watch"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -688,9 +664,7 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "like"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -759,9 +733,7 @@
       "countriesBanned" : [ "Dominican Republic", "Indonesia", "Japan" ]
     } ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "rate"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -780,15 +752,11 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "database",
-  "feature" : "add"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -967,9 +935,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -998,9 +964,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1039,9 +1003,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "purchase"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1090,9 +1052,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "watch"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1151,9 +1111,7 @@
       "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ]
     } ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "rate"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1362,33 +1320,23 @@
       "countriesBanned" : [ "Russia", "Saudi Arabia", "Zimbabwe" ]
     } ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "purchase"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "watch"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "rate"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -1437,9 +1385,7 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1628,9 +1574,7 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ {
@@ -1819,7 +1763,57 @@
     } ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "filter"
+  }
+}, {
+  "error" : null,
+  "currentMoviesList" : null,
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Eduard",
+      "password" : "secret",
+      "accountType" : "premium",
+      "country" : "India",
+      "balance" : "50"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 14,
+    "purchasedMovies" : [ {
+      "name" : "The Well-Digger's Daughter",
+      "year" : "1994",
+      "duration" : 141,
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0,
+      "genres" : [ "Comedy", "Mystery", "Drama" ],
+      "actors" : [ "Fallon Sutcliff", "Maribeth Penas", "Codee Hooks", "Rubia Cotilard" ],
+      "countriesBanned" : [ "China", "South Africa", "Zimbabwe" ]
+    } ],
+    "watchedMovies" : [ {
+      "name" : "The Well-Digger's Daughter",
+      "year" : "1994",
+      "duration" : 141,
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0,
+      "genres" : [ "Comedy", "Mystery", "Drama" ],
+      "actors" : [ "Fallon Sutcliff", "Maribeth Penas", "Codee Hooks", "Rubia Cotilard" ],
+      "countriesBanned" : [ "China", "South Africa", "Zimbabwe" ]
+    } ],
+    "likedMovies" : [ {
+      "name" : "The Well-Digger's Daughter",
+      "year" : "1994",
+      "duration" : 141,
+      "numLikes" : 1,
+      "rating" : 0.0,
+      "numRatings" : 0,
+      "genres" : [ "Comedy", "Mystery", "Drama" ],
+      "actors" : [ "Fallon Sutcliff", "Maribeth Penas", "Codee Hooks", "Rubia Cotilard" ],
+      "countriesBanned" : [ "China", "South Africa", "Zimbabwe" ]
+    } ],
+    "ratedMovies" : [ ],
+    "notifications" : [ {
+      "movieName" : "My Sassy Girl",
+      "message" : "Recommendation"
+    } ]
+  }
 } ]

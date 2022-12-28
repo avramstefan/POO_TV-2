@@ -5,12 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import movie.Movie;
+import movie.MovieDatabase;
 import platform.Platform;
 import user.Credentials;
 import user.User;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
+import java.util.*;
 
 import static java.lang.String.valueOf;
 import static platform.Constants.*;
@@ -294,5 +294,74 @@ public final class Utils {
                 }
             }
         }
+    }
+
+    public static ArrayList<String> getUserGenresTop(User user) {
+        ArrayList<String> genresTop = new ArrayList<>();
+        ArrayList<Integer> numLikes = new ArrayList<>();
+        Map<String, Integer> records = new HashMap<>();
+
+        for (Movie movie: user.getLikedMovies()) {
+            for (String genre: movie.getGenres()) {
+                if (records.containsKey(genre)) {
+                    records.put(genre, records.get(genre) + 1);
+                } else {
+                    records.put(genre, 1);
+                }
+            }
+        }
+
+        for (Map.Entry<String, Integer> entry: records.entrySet()) {
+            genresTop.add(entry.getKey());
+            numLikes.add(entry.getValue());
+        }
+
+        for (int i = 0; i < genresTop.size() - 1; i++) {
+            for (int j = i + 1; j < genresTop.size(); j++) {
+                if (numLikes.get(i) < numLikes.get(j)
+                    || (numLikes.get(i).intValue() == numLikes.get(j).intValue()
+                        && genresTop.get(i).compareTo(genresTop.get(j)) < 0)) {
+                    Collections.swap(genresTop, i, j);
+                    Collections.swap(numLikes, i, j);
+                }
+            }
+        }
+
+        return genresTop;
+    }
+
+    public static int compareByLikes(final Movie m1, final Movie m2) {
+        if (m1.getNumLikes() < m2.getNumLikes()) {
+            return 1;
+        } else if (m1.getRating() < m2.getRating()) {
+            return -1;
+        }
+        return 0;
+    }
+
+    public static ArrayList<Movie> getBestMovies(User user) {
+        platform.setAvailableMovies(MovieDatabase.getInstance().getMovies());
+        platform.removeBannedMovies();
+        ArrayList<Movie> movies = platform.getAvailableMovies();
+
+        for (Movie movie: user.getWatchedMovies()) {
+            movies.remove(movie);
+        }
+
+        movies.sort(Utils::compareByLikes);
+        return movies;
+    }
+
+    public static ObjectNode recommendationOutput(String movieName) {
+        User user = platform.getLoggedUser();
+        user.getNotifications().add(new User.Notification(movieName,
+                            "Recommendation"));
+
+        ObjectNode node = (new ObjectMapper()).createObjectNode();
+        node.put("error", (JsonNode) null);
+        node.put("currentMoviesList", (JsonNode) null);
+        node.set("currentUser", serializeUserCredentials(user));
+
+        return node;
     }
 }

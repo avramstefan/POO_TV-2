@@ -27,7 +27,7 @@ public final class User implements MovieObserver {
         private String movieName;
         private String message;
 
-        Notification(String movieName, String message) {
+        public Notification(String movieName, String message) {
             this.movieName = movieName;
             this.message = message;
         }

@@ -1,9 +1,7 @@
 [ {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "login"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -22,27 +20,19 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "register"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "login"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "login"
+  "currentUser" : null
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -61,13 +51,9 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "login"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "back",
-  "feature" : null
+  "currentUser" : null
 } ]

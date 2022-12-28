@@ -4,6 +4,7 @@ import action.Action;
 import action.ActionExec;
 import action.PageHandler;
 import action.Utils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
@@ -24,6 +25,7 @@ import user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static action.ActionExec.recommend;
 import static platform.Constants.*;
 
 public final class Platform implements MovieObserver {
@@ -79,11 +81,25 @@ public final class Platform implements MovieObserver {
 
             ObjectNode actionObj = action.run();
 
+//            if (actionObj == null) {
+//                ObjectNode actionObj2 = (new ObjectMapper()).createObjectNode();
+//                actionObj2.put("type", action.getType());
+//                actionObj2.put("feature", action.getFeature());
+//                output.add(actionObj2);
+//            }
+
             if (actionObj != null) {
-                actionObj.put("type", action.getType());
-                actionObj.put("feature", action.getFeature());
+//                actionObj.put("type", action.getType());
+//                actionObj.put("feature", action.getFeature());
+//                actionObj.put("page", action.getPage());
+//                actionObj.put("movie", action.getMovie());
                 output.add(actionObj);
             }
+        }
+
+        if (platform.getLoggedUser() != null
+                && platform.getLoggedUser().getCredentials().getAccountType().equals("premium")) {
+            output.add(recommend());
         }
     }
 

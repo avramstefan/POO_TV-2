@@ -1,6 +1,9 @@
 package movie;
 
+import user.User;
+
 import java.util.ArrayList;
+
 
 public final class Movie {
     private String name;
@@ -9,10 +12,11 @@ public final class Movie {
     private ArrayList<String> genres;
     private ArrayList<String> actors;
     private ArrayList<String> countriesBanned;
-    private ArrayList<Integer> ratings;
     private int numLikes;
     private double rating;
     private int numRatings;
+    private ArrayList<Integer> ratings;
+    private ArrayList<User> ratingOwners;
 
     public Movie() {
 
@@ -26,6 +30,7 @@ public final class Movie {
         this.rating = 0;
         this.numRatings = 0;
         this.ratings = new ArrayList<>();
+        this.ratingOwners = new ArrayList<>();
     }
 
     /**
@@ -45,13 +50,6 @@ public final class Movie {
         this.rating = (double) sumRatings / numRatings;
     }
 
-    public ArrayList<Integer> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(final ArrayList<Integer> ratings) {
-        this.ratings = ratings;
-    }
 
     public int getNumLikes() {
         return numLikes;
@@ -123,5 +121,21 @@ public final class Movie {
 
     public void setCountriesBanned(final ArrayList<String> countriesBanned) {
         this.countriesBanned = countriesBanned;
+    }
+
+    public ArrayList<Integer> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(ArrayList<Integer> ratings) {
+        this.ratings = ratings;
+    }
+
+    public ArrayList<User> getRatingOwners() {
+        return ratingOwners;
+    }
+
+    public void setRatingOwners(ArrayList<User> ratingOwners) {
+        this.ratingOwners = ratingOwners;
     }
 }

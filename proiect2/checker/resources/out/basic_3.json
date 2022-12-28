@@ -16,9 +16,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "register"
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -37,9 +35,7 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "change page",
-  "feature" : null
+  }
 }, {
   "error" : null,
   "currentMoviesList" : [ ],
@@ -58,31 +54,21 @@
     "likedMovies" : [ ],
     "ratedMovies" : [ ],
     "notifications" : [ ]
-  },
-  "type" : "on page",
-  "feature" : "filter"
+  }
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "change page",
-  "feature" : null
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "purchase"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "watch"
+  "currentUser" : null
 }, {
   "error" : "Error",
   "currentMoviesList" : [ ],
-  "currentUser" : null,
-  "type" : "on page",
-  "feature" : "like"
+  "currentUser" : null
 } ]
