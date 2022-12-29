@@ -10,7 +10,14 @@ public class DatabaseAction implements ActionStrategy {
 
     }
 
-    public ObjectNode executeAction(Input inputData, Action action) {
+    /**
+     * Function that parse the action of adding or deleting a movie
+     * from the MovieDatabase.
+     * @param inputData
+     * @param action
+     * @return ObjectNode
+     */
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         if (action.getFeature().equals("add")) {
             return MovieDatabase.getInstance().addMovie(action.getAddedMovie());
         } else {

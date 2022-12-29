@@ -10,10 +10,17 @@ import platform.Platform;
 import user.Credentials;
 import user.User;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import static java.lang.String.valueOf;
-import static platform.Constants.*;
+import static platform.Constants.DETAILS;
+import static platform.Constants.HOMEPAGE_UNAUTHENTICATED;
+import static platform.Constants.LOGIN;
+import static platform.Constants.MOVIES;
+import static platform.Constants.REGISTER;
 
 public final class Utils {
 
@@ -23,6 +30,9 @@ public final class Utils {
 
     }
 
+    /**
+     * Setting the platform object for not accessing Platform's instance always.
+     */
     public static void setPlatform() {
         Utils.platform = Platform.getInstance();
     }
@@ -139,7 +149,7 @@ public final class Utils {
         ArrayNode ratedMoviesNode = objectNode.putArray("ratedMovies");
         ArrayNode notificationsNode = objectNode.putArray("notifications");
 
-        for (User.Notification notification : user.getNotifications()){
+        for (User.Notification notification : user.getNotifications()) {
             ObjectNode node = (new ObjectMapper()).createObjectNode();
             node.put("movieName", notification.getMovieName());
             node.put("message", notification.getMessage());
@@ -296,7 +306,12 @@ public final class Utils {
         }
     }
 
-    public static ArrayList<String> getUserGenresTop(User user) {
+    /**
+     * Sorting the genres by their number of likes.
+     * @param user
+     * @return ArrayList of sorted genres
+     */
+    public static ArrayList<String> getUserGenresTop(final User user) {
         ArrayList<String> genresTop = new ArrayList<>();
         ArrayList<Integer> numLikes = new ArrayList<>();
         Map<String, Integer> records = new HashMap<>();
@@ -330,6 +345,12 @@ public final class Utils {
         return genresTop;
     }
 
+    /**
+     * Method used for comparing two movies by likes, for descending sorting.
+     * @param m1
+     * @param m2
+     * @return if 1 then the swap will take place
+     */
     public static int compareByLikes(final Movie m1, final Movie m2) {
         if (m1.getNumLikes() < m2.getNumLikes()) {
             return 1;
@@ -339,7 +360,14 @@ public final class Utils {
         return 0;
     }
 
-    public static ArrayList<Movie> getBestMovies(User user) {
+
+    /**
+     * Method for sorting the movies in descending order
+     * by their number of likes.
+     * @param user
+     * @return Sorted ArrayList of Movies
+     */
+    public static ArrayList<Movie> getBestMovies(final User user) {
         platform.setAvailableMovies(MovieDatabase.getInstance().getMovies());
         platform.removeBannedMovies();
         ArrayList<Movie> movies = platform.getAvailableMovies();
@@ -352,7 +380,12 @@ public final class Utils {
         return movies;
     }
 
-    public static ObjectNode recommendationOutput(String movieName) {
+    /**
+     * Function that creates a special output for the recommendation.
+     * @param movieName
+     * @return ObjectNode
+     */
+    public static ObjectNode recommendationOutput(final String movieName) {
         User user = platform.getLoggedUser();
         user.getNotifications().add(new User.Notification(movieName,
                             "Recommendation"));

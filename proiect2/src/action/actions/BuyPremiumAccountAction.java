@@ -1,14 +1,15 @@
 package action.actions;
 
 import action.Action;
-import action.PageHandler;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import platform.Platform;
 import user.User;
 
 import static action.Utils.actionResult;
-import static platform.Constants.*;
+import static platform.Constants.ERROR;
+import static platform.Constants.PREMIUM_ACCOUNT_TOKENS_PRICE;
+import static platform.Constants.UPGRADES;
 
 public class BuyPremiumAccountAction implements ActionStrategy {
 
@@ -20,7 +21,7 @@ public class BuyPremiumAccountAction implements ActionStrategy {
      * Upgrades the user's account type by buying a premium account.
      * @return ObjectNode output
      */
-    public ObjectNode executeAction(Input inputData, Action action) {
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         Platform platform = Platform.getInstance();
         // Checks if the current page is "upgrades" page.
         if (!platform.getCurrentPage().equals(UPGRADES)) {

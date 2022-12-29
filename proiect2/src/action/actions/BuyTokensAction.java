@@ -7,7 +7,8 @@ import platform.Platform;
 import user.User;
 
 import static action.Utils.actionResult;
-import static platform.Constants.*;
+import static platform.Constants.ERROR;
+import static platform.Constants.UPGRADES;
 
 public class BuyTokensAction implements ActionStrategy {
 
@@ -21,7 +22,7 @@ public class BuyTokensAction implements ActionStrategy {
      * @param action current action
      * @return ObjectNode output
      */
-    public ObjectNode executeAction(Input inputData, Action action) {
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         Platform platform = Platform.getInstance();
 
         // Checks if the current page is "upgrades" page.

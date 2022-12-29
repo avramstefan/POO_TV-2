@@ -10,7 +10,9 @@ import java.util.ArrayList;
 
 import static action.Utils.actionResult;
 import static action.Utils.filterMovies;
-import static platform.Constants.*;
+import static platform.Constants.ERROR;
+import static platform.Constants.MOVIES;
+import static platform.Constants.SUCCESS;
 
 public class FilterAction implements ActionStrategy {
     public FilterAction() {
@@ -23,7 +25,7 @@ public class FilterAction implements ActionStrategy {
      * @param action current action
      * @return ObjectNode output
      */
-    public ObjectNode executeAction(Input inputData, Action action) {
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         Platform platform = Platform.getInstance();
 
         // Checks if the current page is "movies" page.

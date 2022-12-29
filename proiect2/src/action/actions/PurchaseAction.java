@@ -8,7 +8,11 @@ import platform.Platform;
 import user.User;
 
 import static action.Utils.actionResult;
-import static platform.Constants.*;
+import static platform.Constants.CHOSEN_MOVIE;
+import static platform.Constants.DETAILS;
+import static platform.Constants.ERROR;
+import static platform.Constants.MOVIE_TOKENS_PRICE;
+import static platform.Constants.SUCCESS;
 
 public class PurchaseAction implements ActionStrategy {
     public PurchaseAction() {
@@ -19,7 +23,7 @@ public class PurchaseAction implements ActionStrategy {
      * Function used for buying a movie and adding it to user's purchased movies ArrayList.
      * @return ObjectNode output
      */
-    public ObjectNode executeAction(Input inputData, Action action) {
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         Platform platform = Platform.getInstance();
 
         // Checks if the current page is "see details" page.

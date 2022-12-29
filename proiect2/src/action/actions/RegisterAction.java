@@ -4,12 +4,12 @@ import action.Action;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import movie.MovieDatabase;
+import platform.Constants;
 import platform.Platform;
 import user.User;
 
 import static action.Utils.actionResult;
 import static action.Utils.getUserIdxByCredentials;
-import static platform.Constants.*;
 import static platform.Constants.SUCCESS;
 
 public class RegisterAction implements ActionStrategy {
@@ -24,12 +24,12 @@ public class RegisterAction implements ActionStrategy {
      * @param action current action
      * @return ObjectNode output
      */
-    public ObjectNode executeAction(Input inputData, Action action) {
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         Platform platform = Platform.getInstance();
 
         // Checks if the current page is "register" page.
-        if (!platform.getCurrentPage().equals(REGISTER)) {
-            return actionResult(ERROR);
+        if (!platform.getCurrentPage().equals(Constants.REGISTER)) {
+            return actionResult(Constants.ERROR);
         }
 
         /*
@@ -40,7 +40,7 @@ public class RegisterAction implements ActionStrategy {
          */
         int userIdx = getUserIdxByCredentials(inputData.getUsers(), action.getCredentials());
         if (userIdx != -1) {
-            return actionResult(ERROR);
+            return actionResult(Constants.ERROR);
         }
 
         // Creating a new user to be added in the system.
@@ -48,7 +48,7 @@ public class RegisterAction implements ActionStrategy {
         inputData.getUsers().add(newUser);
 
         // Sets the parameters
-        platform.setCurrentPage(HOMEPAGE_AUTHENTICATED);
+        platform.setCurrentPage(Constants.HOMEPAGE_AUTHENTICATED);
         platform.setLoggedUser(newUser);
 
         MovieDatabase.getInstance().getObservers().add(newUser);

@@ -1,15 +1,9 @@
 package user;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import movie.Movie;
 import movie.MovieDatabase;
 import movie.MovieObserver;
-
-import java.util.AbstractMap;
 import java.util.ArrayList;
-
-import static action.Utils.actionResult;
-import static platform.Constants.ERROR;
 import static platform.Constants.START_NUM_FREE_PREMIUM_MOVIES;
 
 public final class User implements MovieObserver {
@@ -23,11 +17,11 @@ public final class User implements MovieObserver {
     private ArrayList<Notification> notifications;
     private ArrayList<String> subscribedGenres;
 
-    public static class Notification {
+    public static final class Notification {
         private String movieName;
         private String message;
 
-        public Notification(String movieName, String message) {
+        public Notification(final String movieName, final String message) {
             this.movieName = movieName;
             this.message = message;
         }
@@ -36,7 +30,7 @@ public final class User implements MovieObserver {
             return movieName;
         }
 
-        public void setMovieName(String movieName) {
+        public void setMovieName(final String movieName) {
             this.movieName = movieName;
         }
 
@@ -44,7 +38,7 @@ public final class User implements MovieObserver {
             return message;
         }
 
-        public void setMessage(String message) {
+        public void setMessage(final String message) {
             this.message = message;
         }
     }
@@ -58,7 +52,13 @@ public final class User implements MovieObserver {
         initializeExtraData();
     }
 
-    private void addNotify(Movie movie) {
+    /**
+     * Function used for notifying the user about a new movie
+     * that has been added in the database, which contains one
+     * of its preffered genres.
+     * @param movie
+     */
+    private void addNotify(final Movie movie) {
         boolean shouldBeNotified = false;
 
         for (String genre: movie.getGenres()) {
@@ -77,7 +77,12 @@ public final class User implements MovieObserver {
         notifications.add(new Notification(movie.getName(), "ADD"));
     }
 
-    private void deleteNotify(Movie deletedMovie) {
+    /**
+     * Method used for deleting a movie from its ArrayLists of movies,
+     * triggered by the "database delete" action.
+     * @param deletedMovie
+     */
+    private void deleteNotify(final Movie deletedMovie) {
         if (!purchasedMovies.contains(deletedMovie)) {
             return;
         }
@@ -96,8 +101,12 @@ public final class User implements MovieObserver {
         notifications.add(new Notification(deletedMovie.getName(), "DELETE"));
     }
 
+    /**
+     * Update the user's characteristics after the subject's notified it.
+     * @param movie
+     */
     @Override
-    public void update(Movie movie) {
+    public void update(final Movie movie) {
         if (MovieDatabase.getInstance().getMovies().contains(movie)) {
             addNotify(movie);
         } else {
@@ -123,7 +132,7 @@ public final class User implements MovieObserver {
         return notifications;
     }
 
-    public void setNotifications(ArrayList<Notification> notifications) {
+    public void setNotifications(final ArrayList<Notification> notifications) {
         this.notifications = notifications;
     }
 
@@ -131,7 +140,7 @@ public final class User implements MovieObserver {
         return subscribedGenres;
     }
 
-    public void setSubscribedGenres(ArrayList<String> subscribedGenres) {
+    public void setSubscribedGenres(final ArrayList<String> subscribedGenres) {
         this.subscribedGenres = subscribedGenres;
     }
 

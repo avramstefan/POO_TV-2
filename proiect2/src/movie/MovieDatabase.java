@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import static action.Utils.actionResult;
 import static platform.Constants.ERROR;
 
-public class MovieDatabase {
+public final class MovieDatabase {
     private ArrayList<Movie> movies;
     private static MovieDatabase movieDatabase = null;
     private final ArrayList<MovieObserver> observers;
@@ -34,7 +34,11 @@ public class MovieDatabase {
         return movieDatabase;
     }
 
-    private void notify(Movie addedMovie) {
+    /**
+     * Function used for notifying the observers about the current event.
+     * @param addedMovie
+     */
+    private void notify(final Movie addedMovie) {
         for (MovieObserver observer: observers) {
             observer.update(addedMovie);
         }
@@ -47,7 +51,12 @@ public class MovieDatabase {
         return movieDatabase;
     }
 
-    private boolean movieExistInDatabase(String movieName) {
+    /**
+     * Method used for checking if the given movie exists in the movie database.
+     * @param movieName
+     * @return true/false
+     */
+    private boolean movieExistInDatabase(final String movieName) {
         for (Movie movie: movies) {
             if (movie.getName().equals(movieName)) {
                 return true;
@@ -56,7 +65,13 @@ public class MovieDatabase {
         return false;
     }
 
-    public ObjectNode addMovie(Movie addedMovie) {
+    /**
+     * Method used for adding a movie into the database and notifying
+     * the observers about this event.
+     * @param addedMovie
+     * @return ObjectNode
+     */
+    public ObjectNode addMovie(final Movie addedMovie) {
         if (movieExistInDatabase(addedMovie.getName())) {
             return actionResult(ERROR);
         }
@@ -66,7 +81,13 @@ public class MovieDatabase {
         return null;
     }
 
-    public ObjectNode deleteMovie(String movieName) {
+    /**
+     * Method used for deleting a movie from the database and notifying
+     * the observers about this event.
+     * @param movieName
+     * @return ObjectNode
+     */
+    public ObjectNode deleteMovie(final String movieName) {
         if (!movieExistInDatabase(movieName)) {
             return actionResult(ERROR);
         }
@@ -85,7 +106,7 @@ public class MovieDatabase {
         return null;
     }
 
-    public static void setMovieDatabase(MovieDatabase movieDatabase) {
+    public static void setMovieDatabase(final MovieDatabase movieDatabase) {
         MovieDatabase.movieDatabase = movieDatabase;
     }
 
@@ -93,7 +114,7 @@ public class MovieDatabase {
         return movies;
     }
 
-    public void setMovies(ArrayList<Movie> movies) {
+    public void setMovies(final ArrayList<Movie> movies) {
         this.movies = movies;
     }
 

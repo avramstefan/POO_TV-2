@@ -42,7 +42,7 @@ current page into the page of the second last action from the linked list.
 The *undo()* operation is quite simple, as the linked list stores objects of class
 *Action*. So, going backward to a previous page is equivalent to changing the page again.
 So, from the *undo()* function, the *execute()* function will be called, but with the
-previous action as a parameter.
+previous action as the current action.
 
 ## <span style="color:#009999">Strategy Pattern</span>
 **Strategy** is a behavioral design pattern which define a family of algorithms and put each
@@ -118,7 +118,8 @@ public static synchronized Platform getInstance(final Input inputData,
     }
 ```
 The **Movie Database** was also implemented as a *Singleton*, because the entire platform
-has just one database of movies, and it is easier to handle it this way.
+has just one database of movies, and it is easier to handle it this way. Also, the
+**PageHandler** is a *Singleton*, too.
 
 ### <span style="color:#009999">Recommendation concept</span>
 This **recommendation** algorithm works by sorting the user's favourite genres and movies. The 

@@ -127,7 +127,7 @@ public final class Movie {
         return ratings;
     }
 
-    public void setRatings(ArrayList<Integer> ratings) {
+    public void setRatings(final ArrayList<Integer> ratings) {
         this.ratings = ratings;
     }
 
@@ -135,7 +135,7 @@ public final class Movie {
         return ratingOwners;
     }
 
-    public void setRatingOwners(ArrayList<User> ratingOwners) {
+    public void setRatingOwners(final ArrayList<User> ratingOwners) {
         this.ratingOwners = ratingOwners;
     }
 }

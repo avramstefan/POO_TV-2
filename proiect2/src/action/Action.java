@@ -1,10 +1,22 @@
 package action;
 
-import action.actions.*;
+import action.actions.ActionStrategy;
+import action.actions.BackAction;
+import action.actions.BuyPremiumAccountAction;
+import action.actions.BuyTokensAction;
+import action.actions.ChangePageAction;
+import action.actions.DatabaseAction;
+import action.actions.FilterAction;
+import action.actions.LikeRateAction;
+import action.actions.LoginAction;
+import action.actions.PurchaseAction;
+import action.actions.RegisterAction;
+import action.actions.SearchAction;
+import action.actions.SubscribeAction;
+import action.actions.WatchAction;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import movie.Movie;
-import movie.MovieDatabase;
 import user.Credentials;
 
 public final class Action {
@@ -36,6 +48,9 @@ public final class Action {
         return actionStrategy.executeAction(inputData, this);
     }
 
+    /**
+     * Setting the correspondent strategy for the action to run.
+     */
     void setActionStrategy() {
 
         switch (type) {
@@ -43,6 +58,8 @@ public final class Action {
             case "subscribe" -> actionStrategy = new SubscribeAction();
             case "database" -> actionStrategy = new DatabaseAction();
             case "back" -> actionStrategy = new BackAction();
+            default -> {
+            }
         }
 
         if (feature == null) {
@@ -59,6 +76,8 @@ public final class Action {
             case "purchase" -> actionStrategy = new PurchaseAction();
             case "watch" -> actionStrategy = new WatchAction();
             case "like", "rate" -> actionStrategy = new LikeRateAction();
+            default -> {
+            }
         }
     }
 
@@ -66,7 +85,7 @@ public final class Action {
         return addedMovie;
     }
 
-    public void setAddedMovie(Movie addedMovie) {
+    public void setAddedMovie(final Movie addedMovie) {
         this.addedMovie = addedMovie;
     }
 
@@ -74,7 +93,7 @@ public final class Action {
         return subscribedGenre;
     }
 
-    public void setSubscribedGenre(String subscribedGenre) {
+    public void setSubscribedGenre(final String subscribedGenre) {
         this.subscribedGenre = subscribedGenre;
     }
 
@@ -82,7 +101,7 @@ public final class Action {
         return deletedMovie;
     }
 
-    public void setDeletedMovie(String deletedMovie) {
+    public void setDeletedMovie(final String deletedMovie) {
         this.deletedMovie = deletedMovie;
     }
 

@@ -1,13 +1,9 @@
 package action;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import input.Input;
 import movie.Movie;
 import movie.MovieDatabase;
-import pages.Page;
 import platform.Platform;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static action.Utils.actionResult;
@@ -21,7 +17,7 @@ import static platform.Constants.MOVIES;
 import static platform.Constants.REGISTER;
 import static platform.Constants.SUCCESS;
 
-public class PageHandler implements Command {
+public final class PageHandler implements Command {
     private static PageHandler pageHandler = null;
     private final Platform platform;
     private Action action;
@@ -29,16 +25,20 @@ public class PageHandler implements Command {
     private final LinkedList<Action> changePageHistory;
     private boolean undoAction = false;
 
-    public PageHandler(Input inputData) {
+    public PageHandler() {
         this.platform = Platform.getInstance();
         this.action = null;
         this.actionNodeResult = null;
         this.changePageHistory = new LinkedList<>();
     }
 
-    public static synchronized PageHandler getInstance(final Input inputData) {
+    /**
+     * Singleton method for accessing a unique PageHandler.
+     * @return instance of PageHandler
+     */
+    public static synchronized PageHandler getInstance() {
         if (pageHandler == null) {
-            pageHandler = new PageHandler(inputData);
+            pageHandler = new PageHandler();
         }
         return pageHandler;
     }
@@ -120,14 +120,26 @@ public class PageHandler implements Command {
     }
 
 
+    /**
+     * Main function used for going backwards in the chain of changing page actions.
+     * It removes the last action from the linked list, as it is the action that
+     * has set the platform's current page. After that, it takes the second
+     * last action and sets it as the current action and then triggers
+     * execute() function.
+     */
     public void undo() {
         if (changePageHistory.size() == 0) {
             actionNodeResult = actionResult(ERROR);
             return;
         }
 
-        Action garbageAction = changePageHistory.removeLast();
+        changePageHistory.removeLast();
 
+        /*
+         Check if there are any more actions in the linked list
+         or if the second last action is redirecting the platform
+         to the HOMEPAGE_AUTHENTICATED.
+        */
         if (changePageHistory.size() == 0
                 || changePageHistory.getLast().getPage().
                 equals(HOMEPAGE_AUTHENTICATED)) {
@@ -136,36 +148,24 @@ public class PageHandler implements Command {
             return;
         }
 
-        Action previousAction = changePageHistory.removeLast();
-
-        if (previousAction.getPage().equals(LOGIN)
-            || previousAction.getPage().equals(REGISTER)) {
-            actionNodeResult = actionResult(ERROR);
-            return;
-        }
-
-        this.setCurrentAction(previousAction);
+        this.setCurrentAction(changePageHistory.removeLast());
         undoAction = true;
         execute();
     }
 
-    public static void setPageHandler(PageHandler pageHandler) {
+    public static void setPageHandler(final PageHandler pageHandler) {
         PageHandler.pageHandler = pageHandler;
     }
 
-    public Action getCurrentAction() {
-        return action;
-    }
-
-    public void setCurrentAction(Action action) {
-        this.action = action;
+    public void setCurrentAction(final Action givenAction) {
+        this.action = givenAction;
     }
 
     public ObjectNode getActionResult() {
         return actionNodeResult;
     }
 
-    public void setActionResult(ObjectNode actionNodeResult) {
-        this.actionNodeResult = actionNodeResult;
+    public void setActionResult(final ObjectNode actionNode) {
+        this.actionNodeResult = actionNode;
     }
 }

@@ -24,9 +24,17 @@ import user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static action.Utils.*;
+import static action.Utils.getBestMovies;
+import static action.Utils.getUserGenresTop;
 import static action.Utils.recommendationOutput;
-import static platform.Constants.*;
+import static platform.Constants.DETAILS;
+import static platform.Constants.HOMEPAGE_AUTHENTICATED;
+import static platform.Constants.HOMEPAGE_UNAUTHENTICATED;
+import static platform.Constants.LOGIN;
+import static platform.Constants.LOGOUT;
+import static platform.Constants.MOVIES;
+import static platform.Constants.REGISTER;
+import static platform.Constants.UPGRADES;
 
 public final class Platform implements MovieObserver {
     private User loggedUser;
@@ -45,14 +53,15 @@ public final class Platform implements MovieObserver {
 
     /**
      * SINGLETON method to assure the creation of a unique platform, used in Main function
-     * with Input parameter for initializing data in constructor.
+     * with Input parameter for initializing data in constructor. Also, it triggers
+     * the construction of MovieDatabase and PageHandler Singletons.
      * @param inputData variable containing a reference to Input class
      */
     public static synchronized Platform getInstance(final Input inputData) {
         if (platform == null) {
             platform = new Platform(inputData);
-            MovieDatabase movieDatabase = MovieDatabase.getInstance(inputData);
-            PageHandler pageHandler = PageHandler.getInstance(inputData);
+            MovieDatabase.getInstance(inputData);
+            PageHandler.getInstance();
         }
         return platform;
     }
@@ -91,6 +100,13 @@ public final class Platform implements MovieObserver {
         }
     }
 
+    /**
+     * Function used for the process of recommendation. If
+     * no movie is found to be recommended, then the message
+     * will be "No recommendation". It uses helper methods
+     * from Utils.
+     * @return
+     */
     public static ObjectNode recommend() {
         ObjectNode obj = (new ObjectMapper()).createObjectNode();
 
@@ -111,7 +127,7 @@ public final class Platform implements MovieObserver {
     }
 
     @Override
-    public void update(Movie movie) {
+    public void update(final Movie movie) {
         setUserAvailableMovies();
     }
 

@@ -8,7 +8,10 @@ import platform.Platform;
 import user.User;
 
 import static action.Utils.actionResult;
-import static platform.Constants.*;
+import static platform.Constants.CHOSEN_MOVIE;
+import static platform.Constants.DETAILS;
+import static platform.Constants.ERROR;
+import static platform.Constants.SUCCESS;
 
 public class WatchAction implements ActionStrategy {
     public WatchAction() {
@@ -19,7 +22,7 @@ public class WatchAction implements ActionStrategy {
      * Function used to quantify the fact that the user has watched a movie or not.
      * @return ObjectNode output
      */
-    public ObjectNode executeAction(Input inputData, Action action) {
+    public ObjectNode executeAction(final Input inputData, final Action action) {
         Platform platform = Platform.getInstance();
 
         // Checks if the current page is "see details" page.
