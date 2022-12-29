@@ -11,7 +11,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static action.Utils.actionResult;
-import static platform.Constants.*;
+import static platform.Constants.DETAILS;
+import static platform.Constants.ERROR;
+import static platform.Constants.HOMEPAGE_AUTHENTICATED;
+import static platform.Constants.HOMEPAGE_UNAUTHENTICATED;
+import static platform.Constants.LOGIN;
+import static platform.Constants.LOGOUT;
+import static platform.Constants.MOVIES;
+import static platform.Constants.REGISTER;
 import static platform.Constants.SUCCESS;
 
 public class PageHandler implements Command {
