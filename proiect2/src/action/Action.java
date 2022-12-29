@@ -1,10 +1,10 @@
 package action;
 
+import action.actions.*;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import input.Input;
 import movie.Movie;
 import movie.MovieDatabase;
-import platform.Platform;
 import user.Credentials;
 
 public final class Action {
@@ -21,6 +21,7 @@ public final class Action {
     private Input inputData;
     private Movie addedMovie;
     private String deletedMovie;
+    private ActionStrategy actionStrategy;
 
     public Action() {
 
@@ -31,45 +32,34 @@ public final class Action {
      * @return ObjectNode output
      */
     public ObjectNode run() {
-        if (type.equals("back")) {
-            PageHandler pageHandler = PageHandler.getInstance(inputData);
-            pageHandler.setCurrentAction(this);
-            pageHandler.undo();
-            return pageHandler.getActionResult();
+        setActionStrategy();
+        return actionStrategy.executeAction(inputData, this);
+    }
+
+    void setActionStrategy() {
+
+        switch (type) {
+            case "change page" -> actionStrategy = new ChangePageAction();
+            case "subscribe" -> actionStrategy = new SubscribeAction();
+            case "database" -> actionStrategy = new DatabaseAction();
+            case "back" -> actionStrategy = new BackAction();
         }
 
-        if (type.equals("subscribe")) {
-            return ActionExec.subscribe(subscribedGenre);
-
+        if (feature == null) {
+            return;
         }
 
-        if (type.equals("database")) {
-            if (feature.equals("add")) {
-                return MovieDatabase.getInstance().addMovie(addedMovie);
-            } else {
-                return MovieDatabase.getInstance().deleteMovie(deletedMovie);
-            }
+        switch (feature) {
+            case "login" -> actionStrategy = new LoginAction();
+            case "register" -> actionStrategy = new RegisterAction();
+            case "search" -> actionStrategy = new SearchAction();
+            case "filter" -> actionStrategy = new FilterAction();
+            case "buy tokens" -> actionStrategy = new BuyTokensAction();
+            case "buy premium account" -> actionStrategy = new BuyPremiumAccountAction();
+            case "purchase" -> actionStrategy = new PurchaseAction();
+            case "watch" -> actionStrategy = new WatchAction();
+            case "like", "rate" -> actionStrategy = new LikeRateAction();
         }
-
-        if (type.equals("change page")) {
-            PageHandler pageHandler = PageHandler.getInstance(inputData);
-            pageHandler.setCurrentAction(this);
-            pageHandler.execute();
-            return pageHandler.getActionResult();
-        }
-
-        return switch (feature) {
-            case "login" -> ActionExec.login(inputData, this);
-            case "register" -> ActionExec.register(inputData, this);
-            case "search" -> ActionExec.search(this);
-            case "filter" -> ActionExec.filter(this);
-            case "buy tokens" -> ActionExec.buyTokens(this);
-            case "buy premium account" -> ActionExec.buyPremiumAccount();
-            case "purchase" -> ActionExec.purchase();
-            case "watch" -> ActionExec.watch();
-            case "like", "rate" -> ActionExec.likeOrRate(this);
-            default -> null;
-        };
     }
 
     public Movie getAddedMovie() {

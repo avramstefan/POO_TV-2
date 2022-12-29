@@ -1,7 +1,6 @@
 package platform;
 
 import action.Action;
-import action.ActionExec;
 import action.PageHandler;
 import action.Utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,7 +24,8 @@ import user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static action.ActionExec.recommend;
+import static action.Utils.*;
+import static action.Utils.recommendationOutput;
 import static platform.Constants.*;
 
 public final class Platform implements MovieObserver {
@@ -73,7 +73,6 @@ public final class Platform implements MovieObserver {
         initializeUsers();
         initializeMovies();
 
-        ActionExec.setPlatform();
         Utils.setPlatform();
 
         for (Action action : inputData.getActions()) {
@@ -81,21 +80,7 @@ public final class Platform implements MovieObserver {
 
             ObjectNode actionObj = action.run();
 
-//            if (actionObj == null) {
-//                ObjectNode actionObj2 = (new ObjectMapper()).createObjectNode();
-//                actionObj2.put("type", action.getType());
-//                actionObj2.put("feature", action.getFeature());
-//                output.add(actionObj2);
-//            }
-
             if (actionObj != null) {
-//                if (action.getType().equals("back")) {
-//                    actionObj.put("currentPage", platform.getCurrentPage());
-//                }
-//                actionObj.put("type", action.getType());
-//                actionObj.put("feature", action.getFeature());
-//                actionObj.put("page", action.getPage());
-//                actionObj.put("movie", action.getMovie());
                 output.add(actionObj);
             }
         }
@@ -104,6 +89,25 @@ public final class Platform implements MovieObserver {
                 && platform.getLoggedUser().getCredentials().getAccountType().equals("premium")) {
             output.add(recommend());
         }
+    }
+
+    public static ObjectNode recommend() {
+        ObjectNode obj = (new ObjectMapper()).createObjectNode();
+
+        User user = platform.getLoggedUser();
+
+        ArrayList<String> genresTop = getUserGenresTop(user);
+        ArrayList<Movie> bestMovies = getBestMovies(user);
+
+        for (String genre: genresTop) {
+            for (Movie movie: bestMovies) {
+                if (movie.getGenres().contains(genre)) {
+                    return recommendationOutput(movie.getName());
+                }
+            }
+        }
+
+        return recommendationOutput("No recommendation");
     }
 
     @Override

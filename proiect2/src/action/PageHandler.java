@@ -17,7 +17,6 @@ import static platform.Constants.SUCCESS;
 public class PageHandler implements Command {
     private static PageHandler pageHandler = null;
     private final Platform platform;
-    private final Input inputData;
     private Action action;
     private ObjectNode actionNodeResult;
     private final LinkedList<Action> changePageHistory;
@@ -25,7 +24,6 @@ public class PageHandler implements Command {
 
     public PageHandler(Input inputData) {
         this.platform = Platform.getInstance();
-        this.inputData = inputData;
         this.action = null;
         this.actionNodeResult = null;
         this.changePageHistory = new LinkedList<>();
