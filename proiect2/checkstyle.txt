@@ -1,8 +1,8 @@
 Starting audit...
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:57:50: Inner assignments should be avoided. [InnerAssignment]
-[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:58:48: Inner assignments should be avoided. [InnerAssignment]
-[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:59:47: Inner assignments should be avoided. [InnerAssignment]
-[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:60:43: Inner assignments should be avoided. [InnerAssignment]
+[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:58:47: Inner assignments should be avoided. [InnerAssignment]
+[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:59:43: Inner assignments should be avoided. [InnerAssignment]
+[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:69:48: Inner assignments should be avoided. [InnerAssignment]
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:70:44: Inner assignments should be avoided. [InnerAssignment]
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:71:47: Inner assignments should be avoided. [InnerAssignment]
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:72:45: Inner assignments should be avoided. [InnerAssignment]
@@ -12,6 +12,5 @@ Starting audit...
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:76:47: Inner assignments should be avoided. [InnerAssignment]
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:77:44: Inner assignments should be avoided. [InnerAssignment]
 [ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\action\Action.java:78:51: Inner assignments should be avoided. [InnerAssignment]
-[ERROR] C:\Users\Stefan\OneDrive\Desktop\proiect_etapa_2_oop\tema\proiect2\.\src\Test.java:9:28: Using the '.*' form of import should be avoided - java.util.concurrent.*. [AvoidStarImport]
 Audit done.
-Checkstyle ends with 14 errors.
+Checkstyle ends with 13 errors.

@@ -40,9 +40,8 @@ public class WatchAction implements ActionStrategy {
 
         if (!currUser.getWatchedMovies().contains(movie)) {
             currUser.getWatchedMovies().add(movie);
-            return actionResult(SUCCESS);
         }
 
-        return null;
+        return actionResult(SUCCESS);
     }
 }

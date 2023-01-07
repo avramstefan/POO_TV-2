@@ -55,7 +55,6 @@ public final class Action {
 
         switch (type) {
             case "change page" -> actionStrategy = new ChangePageAction();
-            case "subscribe" -> actionStrategy = new SubscribeAction();
             case "database" -> actionStrategy = new DatabaseAction();
             case "back" -> actionStrategy = new BackAction();
             default -> {
@@ -67,6 +66,7 @@ public final class Action {
         }
 
         switch (feature) {
+            case "subscribe" -> actionStrategy = new SubscribeAction();
             case "login" -> actionStrategy = new LoginAction();
             case "register" -> actionStrategy = new RegisterAction();
             case "search" -> actionStrategy = new SearchAction();
